@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import psycopg2
 
 # What are the most popular three articles of all time?
@@ -51,6 +52,8 @@ def print_query_results(query_results, query_title, suffix):
         print('\t\u2022 {:<35}\t{:>6} {}'.
               format(str(results[0]), str(results[1]), suffix))
 
-print_query_results(get_query_results(query_1), query_1_title, "views")
-print_query_results(get_query_results(query_2), query_2_title, "views")
-print_query_results(get_query_results(query_3), query_3_title, "% errors")
+
+if __name__ == '__main__':
+    print_query_results(get_query_results(query_1), query_1_title, "views")
+    print_query_results(get_query_results(query_2), query_2_title, "views")
+    print_query_results(get_query_results(query_3), query_3_title, "% errors")
